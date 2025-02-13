@@ -9,7 +9,7 @@
     <header title="Presentación">
         <h1>¡Hola!</h1>
         <h2>Soy Mauricio Olguín Sánchez y hoy quiero que conozcas un poco sobre mi.</h2>
-        <img src="./io_fotografo_low_quality.jpeg" alt="Mauricio Olguin con su cámara fotográfica." width="500px">
+        <img src="./io_fotografo_low_quality.jpeg" alt="Mauricio Olguin con su cámara fotográfica." width="500">
     </header>
     <!--  -->
     <section title="Introducción">
@@ -132,31 +132,36 @@
             <h2>¿Cuáles son los principales controles de una forma HTML5?</h2>
             <p>Los principales controles de un formulario son:</p>
             <ul>
-                <li>&lt;input&gt;: Es el más versatil por todas las opciones que tiene según la necesidad.</li>
-                <p>Ejemplo: <input type="text"></p>
-                <li>&lt;select&gt;: Es un menú desplegable con varias opciones.</li>
-                <p>Ejemplo: <select name="ejemplo de select" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select></p>
-                <li>&lt;textarea&gt;: Área de texto de varias lineas.</li>
-                <p>Ejemplo: <textarea name="" id="">Aquí se puede insertar texto.</textarea></p>
-                <li>&lt;button&gt;: Es un boton personalizable.</li>
-                <p>Ejemplo: <button name="ejemplo" type="button">Ejemplo de botón</button></p>
-                <li>&lt;datalist&gt;: Lista de sugerencias para un campo de entrada.</li>
-                <p>
+                <li>&lt;input&gt;: Es el más versatil por todas las opciones que tiene según la necesidad.<br>
+                    Ejemplo: <input type="text">
+                </li>
+                <li>&lt;select&gt;: Es un menú desplegable con varias opciones.
+                    Ejemplo: <select name="ejemplo de select" id="ejemplo_select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </li>
+                <li>&lt;textarea&gt;: Área de texto de varias lineas. <br>
+                    Ejemplo: <textarea name="textarea_ejemplo" id="ejemplo_textarea">Aquí se puede insertar texto.</textarea>
+                </li>
+                <li>&lt;button&gt;: Es un boton personalizable. <br>
+                    Ejemplo: <button name="ejemplo" type="button">Ejemplo de botón</button>
+                </li>
+                <li>&lt;datalist&gt;: Lista de sugerencias para un campo de entrada. <br>
                     <label>Ejemplo de datalist: <input list="ejemplo_datalist" name="ejemplo datalist"> </label>
-                    <datalist id="ejemplo_datalist">
-                        <option value="valor 1"></option>
-                        <option value="valor 2"></option>
-                        <option value="valor 3"></option>
-                    </datalist>
-                </p>
-                <li>&lt;progress&gt;: Una barra para representar el progreso de alguna operación.</li>
-                <progress id="file" max="100" value="70">70%</progress>
-                <li>&lt;meter&gt;: Barra para medir una escala dentro de un valor conocido.</li>
-                <meter id="ejemplo_meter" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+                <datalist id="ejemplo_datalist">
+                    <option value="valor 1"></option>
+                    <option value="valor 2"></option>
+                    <option value="valor 3"></option>
+                </datalist>
+                </li>
+                <li>&lt;progress&gt;: Una barra para representar el progreso de alguna operación. <br>
+                    <progress id="file" max="100" value="70">70%</progress>
+                </li>
+                <li>&lt;meter&gt;: Barra para medir una escala dentro de un valor conocido. <br>
+                    <meter id="ejemplo_meter" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+                </li>
             </ul>
         </article>
         <article>
