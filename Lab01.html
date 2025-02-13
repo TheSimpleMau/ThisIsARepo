@@ -133,7 +133,7 @@
             <p>Los principales controles de un formulario son:</p>
             <ul>
                 <li>&lt;input&gt;: Es el más versatil por todas las opciones que tiene según la necesidad.</li>
-                <p>Ejemplo: <input type="text">Esto es una entrada de texto.</p>
+                <p>Ejemplo: <input type="text"></p>
                 <li>&lt;select&gt;: Es un menú desplegable con varias opciones.</li>
                 <p>Ejemplo: <select name="ejemplo de select" id="">
                     <option value="1">1</option>
@@ -141,12 +141,22 @@
                     <option value="3">3</option>
                 </select></p>
                 <li>&lt;textarea&gt;: Área de texto de varias lineas.</li>
-                
+                <p>Ejemplo: <textarea name="" id="">Aquí se puede insertar texto.</textarea></p>
                 <li>&lt;button&gt;: Es un boton personalizable.</li>
+                <p>Ejemplo: <button name="ejemplo" type="button">Ejemplo de botón</button></p>
                 <li>&lt;datalist&gt;: Lista de sugerencias para un campo de entrada.</li>
-                <li>&lt;output&gt;: Muestra los resultados.</li>
+                <p>
+                    <label>Ejemplo de datalist: <input list="ejemplo_datalist" name="ejemplo datalist"> </label>
+                    <datalist id="ejemplo_datalist">
+                        <option value="valor 1"></option>
+                        <option value="valor 2"></option>
+                        <option value="valor 3"></option>
+                    </datalist>
+                </p>
                 <li>&lt;progress&gt;: Una barra para representar el progreso de alguna operación.</li>
+                <progress id="file" max="100" value="70">70%</progress>
                 <li>&lt;meter&gt;: Barra para medir una escala dentro de un valor conocido.</li>
+                <meter id="ejemplo_meter" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
             </ul>
         </article>
         <article>
@@ -206,6 +216,7 @@
             <p>Estas son las etiquetas obsoletas en HTML5: ¡Actualízate! | Tokio. (n.d.). Tokio School. <a href="https://www.tokioschool.com/noticias/etiquetas-obsoletas-html5/">https://www.tokioschool.com/noticias/etiquetas-obsoletas-html5/</a></p>
             <p>Tipos de input de HTML5 - Aprende desarrollo web | MDN. (n.d.). MDN Web Docs. <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/HTML5_input_types">https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/HTML5_input_types</a></p>
             <p>Guerrero, A. C. (2015, July 20). Ciclo de vida de un sistema de información • gestiopolis. Gestiopolis. <a href="https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/">https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/</a></p>
+            <p>¿Qué es el SDLC? - Explicación del ciclo de vida del desarrollo de software - AWS. (n.d.). Amazon Web Services, Inc. <a href="https://aws.amazon.com/es/what-is/sdlc/">https://aws.amazon.com/es/what-is/sdlc/</a></p>
         </article>
     </section>
     <!--  -->
