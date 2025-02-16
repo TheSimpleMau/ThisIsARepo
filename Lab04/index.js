@@ -17,3 +17,18 @@ tablaExponentes += "</table>";
 
 document.getElementById("tablaExponentes").innerHTML = tablaExponentes;
 
+// Ejercicio 2
+
+let rand1 = Math.floor(Math.random() * 10);
+let rand2 = Math.floor(Math.random() * 10);
+let respuestaUsuario = Number(prompt("¿Cuánto es la suma entre " + rand1 + " y " + rand2 + "?"));
+
+let respuestaAleatoria = "";
+
+if (respuestaUsuario === rand1+rand2){
+    respuestaAleatoria += "¡Correcto! toma una galleta 🍪";
+} else {
+    respuestaAleatoria += "Incorrecto :(";
+}
+
+document.getElementById("respuestaSuma").innerHTML = respuestaAleatoria;
