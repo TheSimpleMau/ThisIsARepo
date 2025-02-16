@@ -17,6 +17,7 @@ tablaExponentes += "</table>";
 
 document.getElementById("tablaExponentes").innerHTML = tablaExponentes;
 
+
 // Ejercicio 2
 
 let rand1 = Math.floor(Math.random() * 10);
@@ -32,3 +33,49 @@ if (respuestaUsuario === rand1+rand2){
 }
 
 document.getElementById("respuestaSuma").innerHTML = respuestaAleatoria;
+
+
+// Ejercicio 3
+
+function contador(numbers) {
+    let texto = "<br>En el arreglo existen:";
+    texto += "<ul>"
+    let totalNegatives = 0;
+    let totalZeros = 0;
+    let totalGreaterThanZero  = 0;
+    for (let i = 0; i<numbers.length;i++){
+        if (numbers[i] < 0) {
+            totalNegatives += 1;
+        } if (numbers[i] == 0) {
+            totalZeros += 1;
+        } if (numbers[i] > 0) {
+            totalGreaterThanZero += 1;
+        }
+    }
+    texto += "<li>" + totalNegatives + " números negativos. </li>";
+    texto += "<li>" + totalZeros + " números iguales a cero. </li>";
+    texto += "<li>" + totalGreaterThanZero + " números mayores a cero. </li>"
+    texto += "</ul>"
+    return texto;
+}
+
+function generateRandomArray(){
+    let randomArray = [];
+    const max = 10;
+    const min = -10;
+    for (let i = 0; i < Math.floor(Math.random()*10)+1; i++){
+        randomArray.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return randomArray;
+}
+
+randomArray = generateRandomArray();
+
+let listaAleatoria = "Lista: [" + randomArray + "]<br>" + contador(randomArray);
+
+document.getElementById("listaAleatoria").innerHTML = listaAleatoria;
+
+
+// Ejercicio 4
+
+
