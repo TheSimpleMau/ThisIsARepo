@@ -93,6 +93,51 @@
             existen muchisimas diferencias entre Java y JavaScript.
         </p>
         <h2>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h2>
+        <p>Principalmente podríamos divirlos entre dos grandes componentes, <em>get</em> y <em>set</em>,
+            además de que existe cada uno para Local y para UTC. Como ejemplos, tenemos 
+            <code>getFullYear()</code> y <code>getUTCFullYear()</code>.
+        </p>
+        <p>
+            <code>getFullYear()</code> regresa el año de una fecha de acuerdo al tiempo local,
+            mientras que <code>getUTCFullYear()</code> lo regresa de acuerdo al tiempo universal.
+        </p>
+        <p>Así pues, como ejemplo podríamos tener los siguientes métodos:</p>
+        <ul>
+            <li><code>getMonth()</code>: regresa el mes de una fecha, como un valor.</li>
+            <li><code>getDate()</code>: regresa el día del mes (número).</li>
+            <li><code>getDay()</code>: regresa el día de la semana como un valor, el 0 es el domingo.</li>
+            <li><code>getHours()</code>: regresa la hora de una fecha.</li>
+            <li><code>getMinutes()</code>: regresa el minuto de una fecha.</li>
+        </ul>
+        En general, existe un método para cada momento de una fecha (hasta milisegundos) y
+        esta se puede ajustar al tiempo local o al tiempo UTC. Además de que se puede modificar con set.
+        <h2>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h2>
+        <p>Los arreglos tiene principalmente los siguientes métodos:</p>
+        <ul>
+            <li><code>.push(elemento)</code>: nos sirve para añadir un elemento al final del arreglo.</li>
+            <li><code>.pop()</code>: elimina el último elemento del arreglo y lo regresa.</li>
+            <li><code>.shift()</code>: elimina el primer elemento del arreglo y lo regresa.</li>
+            <li><code>.unshift(elemento)</code>: agrega un elemento al inicio del arreglo.</li>
+            <li><code>.map(funcion)</code>: crea un nuevo arreglo aplicandole una función a cada elemento.</li>
+        </ul>
+        <h2>¿Cómo se declara una variable con alcance local dentro de una función?</h2>
+        <p>Se declara dentro de la función con <code>let</code> o con <code>const</code>, por ejemplo:</p>
+        <pre>
+            <code>
+                function miFuncion(){
+                    let var1 = 1; //Esto es una variable local
+                    const var2 = 2; //Esto es una constante local
+                    return 0;
+                }
+            </code>
+        </pre>
+        <h2>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h2>
+        <p>Como ventaja, podemos utilizar esta variable dentro de cualquier función.
+            Por ejemplo, si quicieramos definir por nuestra cuenta el valor de π. Sin embargo
+            si en algún punto de nuestra función cambiamos el valor de la variable, esta se 
+            verá afectada por lo que nos podría costar trabajo saber cual es el valor real de 
+            esta variable durante todo el código.
+        </p>
     </section>
     <script src="./index.js"></script>
 </body>
