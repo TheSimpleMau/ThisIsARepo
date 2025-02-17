@@ -29,7 +29,8 @@ let respuestaAleatoria = "";
 if (respuestaUsuario === rand1+rand2){
     respuestaAleatoria += "¡Correcto! toma una galleta 🍪";
 } else {
-    respuestaAleatoria += "Incorrecto :(";
+    respuestaCorrecta = rand1+rand2;
+    respuestaAleatoria += "Incorrecto :(, la respuesta es: " + respuestaCorrecta;
 }
 
 document.getElementById("respuestaSuma").innerHTML = respuestaAleatoria;
@@ -59,17 +60,15 @@ function contador(numbers) {
     return texto;
 }
 
-function generateRandomArray(){
+function generateRandomArray(min,max){
     let randomArray = [];
-    const max = 10;
-    const min = -10;
-    for (let i = 0; i < Math.floor(Math.random()*10)+1; i++){
+    for (let i = 0; i < 10; i++){
         randomArray.push(Math.floor(Math.random() * (max - min + 1)) + min);
     }
     return randomArray;
 }
 
-randomArray = generateRandomArray();
+randomArray = generateRandomArray(-10,10);
 
 let listaAleatoria = "Lista: [" + randomArray + "]<br>" + contador(randomArray);
 
@@ -78,4 +77,52 @@ document.getElementById("listaAleatoria").innerHTML = listaAleatoria;
 
 // Ejercicio 4
 
+function promedios(numeros){
+    let promedio = 0;
+    for(let i = 0; i<numeros.length; i++){
+        promedio += numeros[i];
+    }
+    promedio = promedio / numeros.length;
+    return promedio;
+}
+
+function promedioMatriz(matriz){
+    let resultados = [];
+    for (let i = 0; i<matriz.length; i++ ){
+        resultados.push("El promedio del arreglo "+ i + " es " +promedios(matriz[i]) + "<br>");
+    }
+    return resultados;
+}
+
+let matrizTexto = "La matriz aleatoria generada es la siguiente: <br> [ <br>";
+let matrizAletoria = [];
+for (let i = 0; i<10; i++){
+    matrizAletoria.push(generateRandomArray(0,10));
+    matrizTexto += "[" + matrizAletoria[i] + "]" + "<br>";
+}
+
+matrizTexto += "] <br> Y ahora, los promedios para cada arreglo son: <br>"
+
+resultadosMatriz = promedioMatriz(matrizAletoria);
+
+for(let i=0; i<matrizAletoria.length; i++){
+    matrizTexto += resultadosMatriz[i];
+}
+
+document.getElementById("proemdioAletorio").innerHTML = matrizTexto;
+
+
+// Ejercicio 5
+
+function inverso(numero){
+    let numeroInvertido = String(numero).split('').reverse().join('');
+    return Number(numeroInvertido);
+}
+
+let numeroAleatorio = Math.floor(Math.random()*100);
+
+
+document.getElementById("inversa").innerHTML = "El número aleatorio es: " + numeroAleatorio + " y su inverso es: " + inverso(numeroAleatorio);
+
+// Ejercicio 6
 

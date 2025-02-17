@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monomakh&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- Para el resaltado del código: -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet"> -->
     <!-- CSS propio -->
     <link rel="stylesheet" href="./index.css">
     <title>Laboratorio 4</title>
@@ -26,13 +24,13 @@
         <h1>Ejercicio 3. Función contador.</h1>
         <p>El código generado para contar los número negativos, ceros y número positivos es el siguiente:</p>
         <pre>
-            <code class="language-js">
+            <code>
                 function contador(numbers) {
                     let texto = "En el arreglo existen: \n";
                     let totalNegatives = 0;
                     let totalZeros = 0;
                     let totalGreaterThanZero  = 0;
-                    for (let i = 0; i<numero.length;i++){
+                    for (let i = 0; i&lt;numero.length;i++){
                         if (numbers[i] < 0) {
                             totalNegatives += 1;
                         } if (numbers[i] == 0) {
@@ -50,6 +48,25 @@
         </pre>
         <p>Ahora vamos a probar la lista con una lista generada aleatoriamente.</p>
         <div id="listaAleatoria"></div>
+        <h1>Ejercicio 4. Funcion de promedio.</h1>
+        <p>El código realizado para la función de promedio es el siguiente:</p>
+        <pre>
+            <code>
+                function promedios(numeros){
+                    let promedio = 0;
+                    for(let i = 0; i&lt;numeros.length; i++){
+                        promedio += numeros[i];
+                    }
+                    promedio = promedio / numeros.length;
+                    return promedio;
+                }
+            </code>
+        </pre>
+        <p>Nuevamente, lo probaremos con un arreglo aletrorio:</p>
+        <div id="proemdioAletorio"></div>
+        <h1>Ejercicio 5. Función inversa.</h1>
+        <p>Probando con un número aleatorio:</p>
+        <div id="inversa"></div>
     </section>
     <script src="./index.js"></script>
 </body>
