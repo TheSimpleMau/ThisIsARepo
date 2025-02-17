@@ -121,8 +121,36 @@ function inverso(numero){
 
 let numeroAleatorio = Math.floor(Math.random()*100);
 
-
 document.getElementById("inversa").innerHTML = "El número aleatorio es: " + numeroAleatorio + " y su inverso es: " + inverso(numeroAleatorio);
+
 
 // Ejercicio 6
 
+class ConversorTemperatura {
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+
+    celsiusAFahrenheit() {
+        return (this.celsius * 9/5) + 32;
+    }
+
+    static fahrenheitACelsius(f) {
+        return (f - 32) * 5/9;
+    }
+}
+
+
+function convertirCelsiusFahrenheit(){
+    let valor = Number(document.getElementById("temperatura").value);
+    let temp = new ConversorTemperatura(valor);
+    document.getElementById("resultadoTemperatura").innerText = valor + "°C = " + temp.celsiusAFahrenheit().toFixed(2) + "°F";
+}
+
+
+
+function convertirFahrenheitCelsius(){
+    let valor = Number(document.getElementById("temperatura").value);
+    let celsius = ConversorTemperatura.fahrenheitACelsius(valor);
+    document.getElementById("resultadoTemperatura").innerText = valor + "°F = " + celsius.toFixed(2) + "°C";
+}
