@@ -25,25 +25,25 @@
         <p>El código generado para contar los número negativos, ceros y número positivos es el siguiente:</p>
         <pre>
             <code>
-                function contador(numbers) {
-                    let texto = "En el arreglo existen: \n";
-                    let totalNegatives = 0;
-                    let totalZeros = 0;
-                    let totalGreaterThanZero  = 0;
-                    for (let i = 0; i&lt;numero.length;i++){
-                        if (numbers[i] < 0) {
-                            totalNegatives += 1;
-                        } if (numbers[i] == 0) {
-                            totalZeros += 1;
-                        } if (numbers[i] > 0) {
-                            totalGreaterThanZero += 1;
-                        }
-                    }
-                    texto += totalNegatives + " negativos.\n";
-                    texto += totalZeros + " iguales a cero.\n";
-                    texto += totalGreaterThanZero + " mayores a cero."
-                    return texto;
-                }
+function contador(numbers) {
+    let texto = "En el arreglo existen: \n";
+    let totalNegatives = 0;
+    let totalZeros = 0;
+    let totalGreaterThanZero  = 0;
+    for (let i = 0; i&lt;numero.length;i++){
+        if (numbers[i] < 0) {
+            totalNegatives += 1;
+        } if (numbers[i] == 0) {
+            totalZeros += 1;
+        } if (numbers[i] > 0) {
+            totalGreaterThanZero += 1;
+        }
+    }
+    texto += totalNegatives + " negativos.\n";
+    texto += totalZeros + " iguales a cero.\n";
+    texto += totalGreaterThanZero + " mayores a cero."
+    return texto;
+}
             </code>
         </pre>
         <p>Ahora vamos a probar la lista con una lista generada aleatoriamente.</p>
@@ -52,14 +52,14 @@
         <p>El código realizado para la función de promedio es el siguiente:</p>
         <pre>
             <code>
-                function promedios(numeros){
-                    let promedio = 0;
-                    for(let i = 0; i&lt;numeros.length; i++){
-                        promedio += numeros[i];
-                    }
-                    promedio = promedio / numeros.length;
-                    return promedio;
-                }
+function promedios(numeros){
+    let promedio = 0;
+    for(let i = 0; i&lt;numeros.length; i++){
+        promedio += numeros[i];
+    }
+    promedio = promedio / numeros.length;
+    return promedio;
+}
             </code>
         </pre>
         <p>Nuevamente, lo probaremos con un arreglo aletrorio:</p>
@@ -72,6 +72,7 @@
             de Celsius a Fahrenheit y viseversa.
         </p>
         <input type="number" id="temperatura" placeholder="Ingresa tu temperatura">
+        <!-- Modificar para que aquí no sea el onclick y sea un id -->
         <button onclick="convertirCelsiusFahrenheit()">Convertir Fahrenheit a Celsius</button>
         <button onclick="convertirFahrenheitCelsius()">Convertir Celsius a fahrenheit</button>
         <div id="resultadoTemperatura"></div>

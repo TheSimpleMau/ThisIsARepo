@@ -140,6 +140,7 @@ class ConversorTemperatura {
     }
 }
 
+// Modificar para que aquí se ejecute el onClick y no en html
 
 function convertirCelsiusFahrenheit(){
     let valor = Number(document.getElementById("temperatura").value);
