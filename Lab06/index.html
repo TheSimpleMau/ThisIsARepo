@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorio 6</title>
-    <link rel="stylesheet" href="./index.css">
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
-<body>
-    
+<body class="container is-max-desktop">
+    <head>
+        <h1 class="title is-1">Validador de contraseñas</h1>
+        <p>En esta actividad, vamos a comprobar que una contraseña se esté escribiendo correctamente con respecto a la contraseña proupesta.</p>
+    </head>
+    <section class="section">
+        <h1 class="title is-1">Ingresa la contraseña en el primer campo</h1>
+        <input class="input is-rounded" type="password" id="passwTry" placeholder="Ingresa contraseña"> <br><br>
+        <input class="input is-rounded" type="password" id="passwChecker" placeholder="Ingresa contraseña de nuevo"> <br><br>
+        <div id="passwStatus"></div>
+    </section>
     <script src="./index.js"></script>
 </body>
 </html>
