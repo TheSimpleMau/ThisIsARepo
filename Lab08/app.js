@@ -22,7 +22,7 @@ const server = http.createServer((request, response) => {
     console.log(request.url); // Información sobre la url
     // response.setHeader('Content-Type', 'text/html');
     // response.write("");
-    // response.end();
+    response.end(); //Devolver algo al servidor
 })
 
 
