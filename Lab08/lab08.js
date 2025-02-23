@@ -69,9 +69,25 @@ rl.on('line', (line) => {
 
 // Ejercicio 4 - Obtener página web hecha previamente
 
+let html = '';
+
 const http = require('http');
+
 const leerLineas = readline.createInterface({
-    input: fs.createReadStream('input.txt'),
+    input: fs.createReadStream('../Lab06/index.html'),
     output: process.stdout,
     terminal: false
 })
+
+leerLineas.on('line', (line) => {
+    html += line;
+});
+
+const server = http.createServer((request,response) => {
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html);
+    response.end();
+})
+
+server.listen(3000);
