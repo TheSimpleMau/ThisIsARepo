@@ -24,30 +24,45 @@ writeStringOnFile("Hola desde función");
 
 // Ejercicio 3
 /*
-    Esta es una función para resolver un problema del CSES.
-    El problema se puede encontrar en la siguiente página: https://cses.fi/problemset/task/1192/
+    Se ha escogido como problema a resolver el siguiente problema de omegaup:
+    https://omegaup.com/arena/problem/Formados-en-la-cafeteria/
+    Es un problema de filas en una cafetería.
 */
 
-// To set the size of the room
-let n,m;
 
-function dfs(visted, basicMatrix, i, j){
-    /**
-     * visited: A matrix of chars. The visted places on the room
-     * basicMatrix: A matrix of chars. The basic room.
-     * i: An integer.
-     * j: An integer.
-     */
-    if (i < 0 || i >= n || j < 0 || j >= m || visted[i][j] != 0 || basicMatrix[i][j] == "#"){
-        return;
+const fs = require('fs');
+const readline = require('readline');
+
+// Crear una interfaz para leer el archivo línea por línea
+const rl = readline.createInterface({
+    input: fs.createReadStream('input.txt'),
+    output: process.stdout,
+    terminal: false
+});
+
+let filaAlumnos = [];
+let filaTrabajadores = [];
+
+// Leer cada línea y procesarla
+rl.on('line', (line) => {
+    if (line.startsWith("LLEGA ALUMNO")) {
+        let nombre = line.split(" ");
+        nombre = nombre[nombre.length - 1];
+        filaAlumnos.push(nombre);
     }
-    visted[i][j] = 1;
-    // Up
-    dfs(visted,basicMatrix,i-1,j);
-    //Down
-    dfs(visted,basicMatrix,i+1,j);
-    //Left
-    dfs(visted,basicMatrix,i,j+1);
-    //Right
-    dfs(visted,basicMatrix,i,j-1);
-}
+    if (line.startsWith("LLEGA TRABAJADOR")){
+        let nombre = line.split(" ");
+        nombre = nombre[nombre.length - 1];
+        filaTrabajadores.push(nombre);
+    }
+    if (line.startsWith("ATIENDE")){
+        if (filaTrabajadores.length > 0) {
+            let nombre = filaTrabajadores.shift()
+            console.log(nombre);
+        } else if (filaAlumnos.length > 0 && filaTrabajadores.length === 0) {
+            let nombre = filaAlumnos.shift()
+            console.log(nombre);
+        }
+    }
+});
+
