@@ -14,12 +14,19 @@
     </head>
     <section class="section">
         <h1 class="title is-1">Ingresa la contraseña en el primer campo</h1>
-        <input class="input is-rounded" type="password" id="passwTry" placeholder="Ingresa contraseña"> <br><br>
+        <p>
+            Recuerda, tu contraseña debe de ser lo suficientemente fuerte, por lo cual,
+            deberá de contener al menos una mayúsucla, un número y un caracter especial.
+        </p> <br>
+        <h2 class="title is-2">Crea tu nueva contraseña:</h2>
+        <input class="input is-rounded" type="password" id="passwTry" placeholder="Ingresa contraseña"> <br>
+        <div id="passwStrong"></div> <br>
+        <h2 class="title is-2">Verifica la contraseña:</h2>
         <input class="input is-rounded" type="password" id="passwChecker" placeholder="Ingresa contraseña de nuevo"> <br><br>
         <div id="passwStatus"></div>
     </section>
     <section class="section">
-        <h1 class="title is-1">Pregutnas</h1>
+        <h1 class="title is-1">Preguntas</h1>
         <h3 class="title is-3">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
         <p>
             Para garantizar que lo que se esté comprobando no sea un intento de ataque hacia el mismo servidor. 
