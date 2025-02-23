@@ -66,3 +66,12 @@ rl.on('line', (line) => {
     }
 });
 
+
+// Ejercicio 4 - Obtener página web hecha previamente
+
+const http = require('http');
+const leerLineas = readline.createInterface({
+    input: fs.createReadStream('input.txt'),
+    output: process.stdout,
+    terminal: false
+})
