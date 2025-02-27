@@ -14,18 +14,13 @@ const server = http.createServer((request, response) => {
         response.write(html);
         response.end();
     }
-    if (request.url == "/index.html" && request.method == "POST"){
-        let paginaRequestData = [];
-        request.on('data', (data)=>{
-            paginaRequestData.push(data);
-        })
-        let paginaRequestTextPlain = '';
-        request.on('end', ()=>{
-            paginaRequestTextPlain = decodeURIComponent(Buffer.concat(paginaRequestData).toString());
-            console.log(paginaRequestTextPlain);
-        })
+    if ((request.url == '/laboratorios'))
+    else {
+        response.setHeader('Content-Type', 'text/html');
+        html = getHTML('./NotFound.html');
+        response.write(html);
+        response.end();
     }
-    response.end();
 })
 
 
