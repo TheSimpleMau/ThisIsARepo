@@ -1,0 +1,25 @@
+{
+  "name": "thisisarepo",
+  "version": "1.0.0",
+  "description": "Laboratorios de Construccion de Software",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSimpleMau/ThisIsARepo.git"
+  },
+  "author": "Mauricio Olguin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheSimpleMau/ThisIsARepo/issues"
+  },
+  "homepage": "https://github.com/TheSimpleMau/ThisIsARepo#readme",
+  "devDependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}

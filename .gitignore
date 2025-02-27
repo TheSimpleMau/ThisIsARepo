@@ -1,3 +1,5 @@
 .DS_Store
 vistoEnClase.js
 .vscode/
+node_modules/
+dist/
