@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 <body class="container is-max-desktop">
-    <head class="head">
-        <h1 class="title is-1">Laboratorio 10</h1>
-        Para este Laboratorio, lo redigiré a otros laboratorios trabajados. 
-    </head>
     <section>
-
+        <h1 class="title is-1">Laboratorio 10</h1>
+        <p class="is-size-4">Para este Laboratorio, lo redigiré a otros laboratorios trabajados.</p>
+        <form class="field" action="/index.html" method="POST">
+            <label class="label">Selecciona un laboratorio</label>
+            <div class="control">
+                <div class="select">
+                    <select name="paginaSeleccion" id="paginaSeleccion">
+                        <option value="./html/Lab03.html">Laboratorio 3: Primeros pasos :D</option>
+                        <option value="./html/Lab05.html">Laboratorio 5: Entendiendo JavaScript</option>
+                        <option value="./html/Lab06.html">Laboratorio 6: Verificador de contraseñas</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <input type="submit" class="button is-info" value="¡Vámos!">
+        </form>
     </section>
     <footer>
     </footer>
