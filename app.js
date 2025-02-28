@@ -4,15 +4,17 @@ const app = express();
 
 const bodyParser = require('body-parser');
 const sobreMiRoutes = require('./routes/SobreMi.routes');
+const githubRoutes = require('./routes/miGithub.routes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/sobreMi',sobreMiRoutes);
+app.use('/miGithub',githubRoutes);
+
 
 app.use('/',(request, response, next) => {
     html = fs.readFileSync('./index.html',{encoding:'utf-8',flag:'r'});
     response.send(html);
-    // next();
 })
 
 
