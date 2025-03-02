@@ -8,6 +8,8 @@ const githubRoutes = require('./routes/miGithub.routes');
 const datosCuriososRoutes = require('./routes/datosCuriosos.routes');
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: true }));
+
 
 app.use('/sobreMi',sobreMiRoutes);
 app.use('/miGithub',githubRoutes);
