@@ -5,11 +5,13 @@ const app = express();
 const bodyParser = require('body-parser');
 const sobreMiRoutes = require('./routes/SobreMi.routes');
 const githubRoutes = require('./routes/miGithub.routes');
+const datosCuriososRoutes = require('./routes/datosCuriosos.routes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/sobreMi',sobreMiRoutes);
 app.use('/miGithub',githubRoutes);
+app.use('/datosCuriosos',datosCuriososRoutes);
 
 
 app.use('/',(request, response, next) => {
