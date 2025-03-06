@@ -1,0 +1,18 @@
+<%- include('includes/header', { title: 'Sobre Mi' }) %>
+
+<section class="section">
+    <% if (error) { %>
+        <h1 class="title is-1">Pregunta no guardada :(</h1>
+        <% if (reason == 400) { %>
+            <p class="is-size-5"> No haz ingresado ninguna pregunta :( </p>
+        <% } else { %>
+            <p class="is-size-5"> Ha habido un error al guardar tu pregunta :( </p>
+        <% } %>
+        <a class="button" href="/">Regresar al inicio</a>
+    <% } else { %>
+        <h1 class="title is-1">Pregunta guardada correctamente!</h1>
+        <a class="button" href="/">Regresar al inicio</a>
+    <% } %>
+</section>
+
+<%- include('includes/footer') %>

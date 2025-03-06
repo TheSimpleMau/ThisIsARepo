@@ -4,7 +4,7 @@ const path = require('path');
 
 
 router.use('/', (request, response, next)=>{
-    response.sendFile(path.join(__dirname, '..', 'views', 'DatosCuriosos.html'))
+    response.render('datosCuriosos')
 })
 
 module.exports = router;
