@@ -1,6 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const bodyParser = require('body-parser');
 const sobreMiRoutes = require('./routes/SobreMi.routes');
@@ -21,8 +22,7 @@ app.use('/contacto',contactoRoutes);
 
 
 app.use('/',(request, response, next) => {
-    html = fs.readFileSync('./index.html',{encoding:'utf-8',flag:'r'});
-    response.send(html);
+    response.sendFile(path.join(__dirname, 'views', 'index.html'));
 })
 
 

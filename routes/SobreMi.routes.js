@@ -5,8 +5,7 @@ const path = require('path');
 
 
 router.get('/', (request, response, next)=>{
-    const html = fs.readFileSync(path.join(__dirname, 'html', 'SobreMi.html'), { encoding: 'utf-8' });
-    response.send(html);
+    response.sendFile(path.join(__dirname,'..','views','SobreMi.html'));
 })
 
 
@@ -17,15 +16,13 @@ router.post('/guardar', (request, response, next) => {
     }
     const pregunta = request.body.pregunta;
     if (!pregunta) {
-        const html = fs.readFileSync(path.join(__dirname, 'html', 'preguntaError.html'), { encoding: 'utf-8' });
-        return response.status(400).send(html);
+        return response.status(400).sendFile(path.join(__dirname, '..', 'preguntaError.html'));
     }
     fs.appendFile(filePath, pregunta + '\n', (err) => {
         if (err) {
-            return response.status(500).send(html);
+            response.status(500).sendFile(path.join(__dirname, '..', 'preguntaError.html'));
         }
-        const html = fs.readFileSync(path.join(__dirname, 'html', 'preguntaGuardada.html'), { encoding: 'utf-8' });
-        response.send(html);
+        response.sendFile(path.join(__dirname, '..', 'views', 'preguntaGuardada.html'));
     });
 });
 
