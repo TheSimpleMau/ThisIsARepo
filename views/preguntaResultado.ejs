@@ -1,6 +1,8 @@
-<%- include('includes/header', { title: 'Sobre Mi' }) %>
+<%- include('includes/_header', { title: 'Sobre Mi' }) %>
+<%- include('includes/_nav') %>
 
 <section class="section">
+    
     <% if (error) { %>
         <h1 class="title is-1">Pregunta no guardada :(</h1>
         <% if (reason == 400) { %>
@@ -11,8 +13,17 @@
         <a class="button" href="/">Regresar al inicio</a>
     <% } else { %>
         <h1 class="title is-1">Pregunta guardada correctamente!</h1>
+        <div>
+            <h2 class="subtitle">Preguntas recibidas:</h2>
+            <ul>
+                <% for (let pregunta of preguntas) { %>
+                    <li><%= pregunta %></li>
+                <% } %>
+            </ul>
+        </div>
+        <br>
         <a class="button" href="/">Regresar al inicio</a>
     <% } %>
 </section>
 
-<%- include('includes/footer') %>
+<%- include('includes/_footer') %>

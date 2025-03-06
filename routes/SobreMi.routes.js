@@ -28,38 +28,20 @@ router.post('/guardar', (request, response, next) => {
                 reason: 500
             });
     }
-    response.render('preguntaResultado');
-    });
-});
-
-module.exports = router;
-
-/*
-const express = require('express');
-const router = express.Router();
-const fs = require('fs');
-const path = require('path');
-
-router.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'SobreMi.html'));
-});
-
-router.post('/guardar', (req, res, next) => {
-  const filePath = path.join(__dirname, 'preguntas.txt');
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, '', { flag: 'w' });
-  }
-  const pregunta = req.body.pregunta;
-  if (!pregunta) {
-    return res.status(400).render('preguntaResult', { error: true });
-  }
-  fs.appendFile(filePath, pregunta + '\n', (err) => {
-    if (err) {
-      return res.status(500).render('preguntaResult', { error: true });
-    }
-    res.render('preguntaResult', { error: false });
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        return res.status(500).render('preguntaResultado', {
+          error: true,
+          reason: 500
+        });
+      }
+      const preguntas = data.split('\n').filter(p => p.trim() !== '');
+      response.render('preguntaResultado', {
+        error: false,
+        preguntas: preguntas
+      });
+    })
   });
 });
 
 module.exports = router;
-*/
