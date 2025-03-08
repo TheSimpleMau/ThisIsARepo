@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const datosCuriososController = require('../controllers/datosCuriosos.controller');
 
-
-router.use('/', (request, response, next)=>{
-    response.render('datosCuriosos')
-})
+router.get('/', datosCuriososController.getRoot);
 
 module.exports = router;

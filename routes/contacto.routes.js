@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const contactoController = require('../controllers/contacto.controller');
 
-router.use('/', (request, response, next)=>{
-    response.render('contacto')
-})
+router.get('/', contactoController.getRoot);
 
 module.exports = router; 

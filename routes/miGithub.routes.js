@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const miGithubContrlloer = require('../controllers/miGithub.controller');
 
 
-router.use('/', (request, response, next)=>{
-    response.render('miGithub')
-})
+router.get('/', miGithubContrlloer.getRoot);
 
 module.exports = router; 

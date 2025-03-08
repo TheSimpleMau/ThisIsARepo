@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 exports.postGuardar = (request, response, next) => {
     const filePath = path.join(__dirname, 'preguntas.txt');
     if (!fs.existsSync(filePath)) {

@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const pasatiemposController = require('../controllers/pasatiempos.controller');
 
-const path = require('path');
-
-router.use('/', (request, response, next)=>{
-    response.render('pasatiempos');
-})
+router.get('/', pasatiemposController.getRoot);
 
 module.exports = router; 
