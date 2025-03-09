@@ -9,6 +9,7 @@ const datosCuriososRoutes = require('./routes/datosCuriosos.routes');
 const pasatiempossRoutes = require('./routes/pasatiempos.routes');
 const contactoRoutes = require('./routes/contacto.routes');
 const blogRoutes = require('./routes/bolg.routes');
+const userRoutes = require('./routes/users.routes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +24,7 @@ app.use('/datosCuriosos',datosCuriososRoutes);
 app.use('/pasatiempos',pasatiempossRoutes);
 app.use('/contacto',contactoRoutes);
 app.use('/blog',blogRoutes);
+app.use('/users', userRoutes);
 
 
 app.use('/',(request, response, next) => {

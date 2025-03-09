@@ -17,6 +17,25 @@
                 <a href="/contacto" id="contacto" class="navbar-item is-hoverable">Contacto</a>
                 <a href="/blog" id="blog" class="navbar-item is-hoverable">Blog</a>
             </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                    <% if (isLoggedIn) { %>
+                        <%= username %> | 
+                    <a href="/users/logout" class="button is-danger">
+                        Salir
+                    </a>
+                    <% } else { %>
+                    <a class="button is-primary">
+                        <strong>Registarse</strong>
+                    </a>
+                    <a href="/users/login" class="button is-light">
+                        Ingresar
+                    </a>
+                    <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     <div class="content">

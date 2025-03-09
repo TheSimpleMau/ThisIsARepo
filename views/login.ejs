@@ -1,0 +1,28 @@
+<%- include('includes/_header', { title: 'Login' }) %>
+<%- include('includes/_nav') %>
+
+<form action="/users/login" method="POST">
+    <label for="username" class="label">Usuario</label>
+    <input
+        class="input is-info"
+        type="text"
+        placeholder="Pepito"
+        id="username"
+        name="username"
+        required
+    />
+    <br><br>
+    <label for="password" class="label">Contraseña</label>
+    <input
+        class="input is-info"
+        placeholder="Tu contraseña secreta 🤐"
+        type="password"
+        id="password"
+        name="password"
+        required
+    />
+    <br><br>
+    <input class="button is-info is-pulled-right" type="submit" value="Entrar">
+</form>
+
+<%- include('includes/_footer.ejs') %>

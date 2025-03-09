@@ -1,15 +1,15 @@
 const Blog = require('../models/blog.model');
 
-exports.getAllPosts = (request, response) => {
+exports.getAllPosts = (request, response, next) => {
     const posts = Blog.getAll();
-    response.render('blog/index', { posts });
+    response.render('blog/index', posts);
 };
 
-exports.getCreatePost = (request, response) => {
+exports.getCreatePost = (request, response, next) => {
     response.render('blog/create');
 };
 
-exports.postCreatePost = (request, response) => {
+exports.postCreatePost = (request, response, next) => {
     const title = request.body.title;
     const content = request.body.content;
     if (!title || !content) {
@@ -22,7 +22,7 @@ exports.postCreatePost = (request, response) => {
     response.redirect('/blog');
 };
 
-exports.deletePost = (request, response) => {
+exports.deletePost = (request, response, next) => {
     const id  = request.params;
     Blog.deleteById(id);
     response.redirect('/blog');
