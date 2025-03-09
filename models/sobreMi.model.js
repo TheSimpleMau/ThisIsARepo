@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Definimos la ruta del archivo donde se guardarán las preguntas
-const filePath = path.join(__dirname, 'preguntas.txt');
+const filePath = path.join(__dirname, '../preguntas.txt');
 
 module.exports = class Pregunta {
     constructor(texto) {

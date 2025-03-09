@@ -1,0 +1,29 @@
+<%- include('../includes/_header', { title: 'Mi blog' }) %>
+<%- include('../includes/_nav') %>
+
+<h1 class="title is-1">Crear Publicación</h1>
+
+<form action="/blog/create" method="POST">
+    <div class="field">
+        <label class="label" for="title">Título</label>
+        <div class="control">
+            <input class="input" type="text" id="title" name="title" placeholder="Escribe el título aquí" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="content">Contenido</label>
+        <div class="control">
+            <textarea class="textarea" id="content" name="content" placeholder="Escribe el contenido aquí" required></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <button class="button is-primary">Publicar</button>
+        </div>
+    </div>
+</form>
+
+
+<%- include('../includes/_footer.ejs') %>
