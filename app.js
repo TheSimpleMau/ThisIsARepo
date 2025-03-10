@@ -36,10 +36,11 @@ app.use('/users', userRoutes);
 
 
 app.use('/',(request, response, next) => {
-    response.render('index', {
+    sessionStatus = {
         isLoggedIn : request.session.isLoggedIn || false,
         username : request.session.username || '',
-    });
+    }
+    response.render('index', sessionStatus);
 })
 
 

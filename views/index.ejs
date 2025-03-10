@@ -1,43 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <title>Laboratorios</title>
-</head>
-<body class="container is-max-desktop">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <a href="/sobreMi" id="sobreMi" class="navbar-item is-hoverable">Sobre mí</a>
-                <a href="/miGithub" id="miGithub" class="navbar-item is-hoverable">Mi GitHub</a>
-                <a href="/datosCuriosos" id="datosCuriosos" class="navbar-item is-hoverable">Datos curiosos</a>
-                <a href="/pasatiempos" id="pasatiempos" class="navbar-item is-hoverable">Pasatiempos</a>
-                <a href="/contacto" id="contacto" class="navbar-item is-hoverable">Contacto</a>
-                <a href="/blog" id="blog" class="navbar-item is-hoverable">Blog</a>
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                    <% if (isLoggedIn) { %>
-                        <%= username %> | 
-                    <a href="/users/logout" class="button is-danger">
-                        Salir
-                    </a>
-                    <% } else { %>
-                    <a class="button is-primary">
-                        <strong>Registarse</strong>
-                    </a>
-                    <a href="/users/login" class="button is-light">
-                        Ingresar
-                    </a>
-                    <% } %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+<%- include('includes/_header.ejs', {title: 'Inicio'})%>
+<%- include('includes/_nav.ejs')%>
     <div class="content">
         <div class="columns is-vcentered">
             <div class="column">
@@ -90,5 +52,4 @@
             para la comunicación entre los componentes.
         </p>
     </div>
-</body>
-</html>
+<%- include('includes/_footer.ejs')%>
