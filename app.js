@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 
 const sobreMiRoutes = require('./routes/sobreMi.routes');
 const githubRoutes = require('./routes/miGithub.routes');
@@ -11,12 +20,11 @@ const contactoRoutes = require('./routes/contacto.routes');
 const blogRoutes = require('./routes/bolg.routes');
 const userRoutes = require('./routes/users.routes');
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 app.use('/sobreMi',sobreMiRoutes);
 app.use('/miGithub',githubRoutes);
@@ -28,7 +36,10 @@ app.use('/users', userRoutes);
 
 
 app.use('/',(request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'index.html'));
+    response.render('index', {
+        isLoggedIn : request.session.isLoggedIn || false,
+        username : request.session.username || '',
+    });
 })
 
 

@@ -1,6 +1,10 @@
 const Pregunta = require('../models/sobreMi.model');
 
 exports.postGuardar = (request, response, next) => {
+    sessionStatus = {
+        isLoggedIn : request.session.isLoggedIn || false,
+        username : request.session.username || '',
+    }
     const preguntaTexto = request.body.pregunta;
     if (!preguntaTexto) {
         return response.status(400).render('preguntaResultado', {
@@ -24,17 +28,25 @@ exports.postGuardar = (request, response, next) => {
             if (err) {
                 return response.status(500).render('preguntaResultado', {
                     error: true,
-                    reason: 500
+                    reason: 500,
+                    isLoggedIn : request.session.isLoggedIn || false,
+                    username : request.session.username || '',
                 });
             }
             response.render('preguntaResultado', {
                 error: false,
-                preguntas: preguntas
+                preguntas: preguntas,
+                isLoggedIn : request.session.isLoggedIn || false,
+                username : request.session.username || '',
             });
         });
     });
 };
 
 exports.getRoot = (request, response, next)=>{
-    response.render('sobreMi');
+    sessionStatus = {
+        isLoggedIn : request.session.isLoggedIn || false,
+        username : request.session.username || '',
+    }
+    response.render('sobreMi', sessionStatus);
 }

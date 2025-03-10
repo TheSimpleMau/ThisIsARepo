@@ -1,4 +1,9 @@
+
 exports.getLogout = (request, response, next) => {
+    sessionStatus = {
+        isLoggedIn : request.session.isLoggedIn || false,
+        username : request.session.username || '',
+    }
     request.session.destroy(() => {
         response.redirect('/users/login'); 
     });
@@ -11,5 +16,9 @@ exports.postLogin = (request, response, next) => {
 };
 
 exports.getLogin = (request, response, next) => {
-    response.render('login');
+    sessionStatus = {
+        isLoggedIn : request.session.isLoggedIn || false,
+        username : request.session.username || '',
+    }
+    response.render('login', sessionStatus);
 }
