@@ -5,8 +5,13 @@ exports.getAllPosts = (request, response, next) => {
         isLoggedIn : request.session.isLoggedIn || false,
         username : request.session.username || '',
     }
-    const posts = Blog.getAll();
-    response.render('blog/index', {posts, sessionStatus});
+    const posts = Blog.getAll()
+    .then(([rows, fieldData]) => {
+        response.render('blog/index', {rows, sessionStatus});
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 };
 
 exports.getCreatePost = (request, response, next) => {

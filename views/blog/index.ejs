@@ -5,11 +5,12 @@
 <a class="button is-info" href="/blog/create">Crear nueva publicación</a>
 
 <ul>
-    <% posts.forEach(post => { %>
+    <%-  %>
+    <% rows.forEach(post => { %>
         <li>
-            <h2 class="title is-2"><%= post.title %></h2>
-            <p class="is-size-5"><%= post.content %></p>
-            <small><%= post.date %></small>
+            <h2 class="title is-2"><%- post.title %></h2>
+            <p class="is-size-5"><%- post.content %></p>
+            <small><%- post.date %></small>
             <br>
             <form action="/blog/delete/<%= post.id %>" method="POST">
                 <button class="button is-warning" type="submit">Eliminar post</button>

@@ -1,32 +1,31 @@
+const db = require('../utils/database.js');
+
 class Blog {
     constructor(title, content) {
-        this.id = Blog.incrementId();
+        this.is = NaN // nan hasta que se cree en la base de datos
         this.title = title;
         this.content = content;
-        this.date = new Date().toISOString();
+        // this.date = new Date().toISOString();
     }
 
-    static incrementId() {
-        if (!this.currentId) this.currentId = 1;
-        else this.currentId++;
-        return this.currentId;
-    }
 
     save() {
-        Blog.posts.push(this);
+        // Blog.posts.push(this);
+        return db.execute('INSERT INTO Blog(title, content) VALUES (?, ?)', [this.title, this.content]);
     }
 
     static getAll() {
-        return Blog.posts;
+        return db.execute('SELECT * FROM Blog');
     }
 
-    static findById(id) {
-        return Blog.posts.find(post => post.id === parseInt(id));
+    static getNewID(id) {
+        return db.execute('SELECT')
     }
 
-    static deleteById(id) {
-        Blog.posts = Blog.posts.filter(post => post.id !== parseInt(id));
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM plantas WHERE id = ?', [id]);
     }
+
 }
 
 Blog.posts = [];
