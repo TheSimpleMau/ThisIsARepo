@@ -1,0 +1,14 @@
+<%- include('../includes/_header', { title: post.title }) %>
+<%- include('../includes/_nav') %>
+
+<article>
+    <h1 class="title is-1"><%- post.title %></h1>
+    <p class="is-size-5"><%- post.content %></p>
+    <% if(post.date) { %>
+        <small><%- post.date %></small>
+    <% } %>
+</article>
+
+<a class="button is-info" href="/blog">Volver al listado</a>
+
+<%- include('../includes/_footer') %>

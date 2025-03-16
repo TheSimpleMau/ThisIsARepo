@@ -8,10 +8,13 @@
     <%-  %>
     <% rows.forEach(post => { %>
         <li>
+            <br><br>
             <h2 class="title is-2"><%- post.title %></h2>
             <p class="is-size-5"><%- post.content %></p>
             <small><%- post.date %></small>
-            <br>
+            <br><br>
+            <a href="/blog/post/<%= post.id %>" class="button is-info">Ver post</a>
+            <br><br>
             <form action="/blog/delete/<%= post.id %>" method="POST">
                 <button class="button is-warning" type="submit">Eliminar post</button>
             </form>

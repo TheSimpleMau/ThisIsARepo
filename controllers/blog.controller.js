@@ -5,13 +5,34 @@ exports.getAllPosts = (request, response, next) => {
         isLoggedIn : request.session.isLoggedIn || false,
         username : request.session.username || '',
     }
-    const posts = Blog.getAll()
-    .then(([rows, fieldData]) => {
+    Blog.getAll().then(([rows]) => {
         response.render('blog/index', {rows, sessionStatus});
     })
     .catch((error) => {
         console.log(error);
     });
+};
+
+exports.getOnePost = (request, response, next) => {
+    const sessionStatus = {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
+    };
+
+    const id = request.params.id;
+
+    Blog.fetchOne(id)
+        .then(([rows]) => {
+            if (rows.length > 0) {
+                const post = rows[0];
+                response.render('blog/post', {post, sessionStatus});
+            } else {
+                response.status(404).render('notFound', {sessionStatus});
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 };
 
 exports.getCreatePost = (request, response, next) => {
@@ -44,7 +65,13 @@ exports.deletePost = (request, response, next) => {
         isLoggedIn : request.session.isLoggedIn || false,
         username : request.session.username || '',
     }
-    const id  = request.params;
-    Blog.deleteById(id);
-    response.redirect('/blog');
+    const id = request.params.id;
+    Blog.deleteById(id)
+    .then(() => {
+        response.redirect('/blog');
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 };
+

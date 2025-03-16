@@ -1,50 +1,83 @@
 <%- include('includes/_header.ejs', {title: 'Inicio'})%>
 <%- include('includes/_nav.ejs')%>
-    <div class="content">
-        <div class="columns is-vcentered">
-            <div class="column">
-                <h1 class="title is-1">Mauricio Olguín Sánchez</h1>
-                <p class="is-size-4">¡Hola! Esta es mi página personal, aquí podrás descubrir cosas sobre mí :D</p>
-            </div>
-            <div class="column is-narrow">
-                <figure class="image is-128x128">
-                    <img class="is-rounded" src="/imgs/io_fotografo_low_quality.jpeg" alt="Mauricio con su cámara fotográfica, de perfil">
-                </figure>
-            </div>
+<div class="content">
+    <div class="columns is-vcentered">
+        <div class="column">
+            <h1 class="title is-1">Mauricio Olguín Sánchez</h1>
+            <p class="is-size-4">¡Hola! Esta es mi página personal, aquí podrás descubrir cosas sobre mí :D</p>
+        </div>
+        <div class="column is-narrow">
+            <figure class="image is-128x128">
+                <img class="is-rounded" src="/imgs/io_fotografo_low_quality.jpeg" alt="Mauricio con su cámara fotográfica, de perfil">
+            </figure>
         </div>
     </div>
-    <div class="content">
-        <h1 class="title is-1">¿Qué es esto?</h1>
-        <p class="is-size-5">
-            Si quieres saber lo básico de mi, visita la pestaña de <a href="sobreMi">Sobre mi</a>.
-        </p>
-        <p class="is-size-5">
-            En cambio, si quieres saber los trabajos que he realizado en GitHub, visita la pestaña de <a href="miGithub">Mi Github</a>.
-        </p>
-        <p class="is-size-5">
-            Visita la página de <a href="datosCuriosos">Datos curiosos</a> para saber datos curiosos que probablemente diría si es que nos
-            encontraramos alguna vez.
-        </p>
-        <p class="is-size-5">
-            ¿Quieres saber cuales son mis pasatiempos? ¡visita la página de <a href="pasatiempos">pasatiempos</a> para saberlos!
-        </p>
-        <p class="is-size-5">
-            Por útltimo, si hablar conmigo, visita mi página de <a href="contacto">contacto</a>.
-        </p>
-    </div>
-    <div class="content">
-        <h1 class="title is-1">Preguntas Laboratorio 13</h1>
-        <h2 class="title is-2">
-            ¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
-        </h2>
-        <p class="is-size-5">
-            
-        </p>
-        <h2 class="title is-2">
-            ¿Qué es SQL injection y cómo se puede prevenir?
-        </h2>
-        <p class="is-size-5">
-            
-        </p>
-    </div>
+</div>
+<div class="content">
+    <h1 class="title is-1">¿Qué es esto?</h1>
+    <p class="is-size-5">
+        Si quieres saber lo básico de mi, visita la pestaña de <a href="sobreMi">Sobre mi</a>.
+    </p>
+    <p class="is-size-5">
+        En cambio, si quieres saber los trabajos que he realizado en GitHub, visita la pestaña de <a href="miGithub">Mi Github</a>.
+    </p>
+    <p class="is-size-5">
+        Visita la página de <a href="datosCuriosos">Datos curiosos</a> para saber datos curiosos que probablemente diría si es que nos
+        encontraramos alguna vez.
+    </p>
+    <p class="is-size-5">
+        ¿Quieres saber cuales son mis pasatiempos? ¡visita la página de <a href="pasatiempos">pasatiempos</a> para saberlos!
+    </p>
+    <p class="is-size-5">
+        Además, puedes revisar mis pensamientos (o temas randoms) en mi sección de <a href="blog">blog</a>
+    </p>
+    <p class="is-size-5">
+        Por útltimo, si hablar conmigo, visita mi página de <a href="contacto">contacto</a>.
+    </p>
+</div>
+<div class="content">
+    <h1 class="title is-1">Preguntas Laboratorio 17</h1>
+    <h2 class="title is-2">
+        ¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+    </h2>
+    <p class="is-size-5">
+        Escribir el código SQL exclusivamente en la capa del modelo ofrece varias ventajas cómo:
+        <ul class="is-size-5">
+            <li>Separación de responsabilidades.</li>
+            <li>Mantenibilidad.</li>
+            <li>Reutilización de código.</li>
+            <li>Facilidad de pruebas.</li>
+            <li>Escalabilidad.</li>
+        </ul>
+        Gracias a esto, se facilita la colaboración entre los desarrolladores y la realización de pruebas.
+    </p>
+    <h2 class="title is-2">
+        ¿Qué es SQL injection y cómo se puede prevenir?
+    </h2>
+    <p class="is-size-5">
+        ​La inyección SQL es una técnica de ataque en la que un atacante inserta código malicioso en una consulta SQL a 
+        través de entradas de usuario no validadas, con el objetivo de acceder, manipular o eliminar datos en una base de datos.
+    </p>
+    <p class="is-size-5">
+        Para prevenir estos ataques, se pueden implementar las siguientes soluciones:
+        <ul class="is-size-5">
+            <li>Validación y saneamiento de entradas.</li>
+            <li>Uso de consultas parametrizadas y declaraciones preparadas.</li>
+            <li>Implementación de procedimientos almacenados.</li>
+        </ul>
+    </p>
+    <p class="is-size-5">
+        Implementar estas medidas de seguridad es esencial para proteger las aplicaciones y bases de datos contra ataques de 
+        inyección de SQL, garantizando la integridad, confidencialidad y disponibilidad de la información.
+    </p>
+</div>
+<div class="footer">
+    <h1 class="title is-1">Referencias</h1>
+    <p class="is-size-5">
+        Hernandez, R. D. (2021, Junio 28). El patrón modelo-vista-controlador: Arquitectura y frameworks explicados. freeCodeCamp.org. <a href="https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/">https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/</a>
+    </p>
+    <p>
+        Cómo prevenir un ataque de inyección SQL | Cloudflare. (n.d.). <a href="https://www.cloudflare.com/es-es/learning/security/threats/how-to-prevent-sql-injection/">https://www.cloudflare.com/es-es/learning/security/threats/how-to-prevent-sql-injection/</a>
+    </p>
+</div>
 <%- include('includes/_footer.ejs')%>
