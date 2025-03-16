@@ -36,48 +36,41 @@
     </p>
 </div>
 <div class="content">
-    <h1 class="title is-1">Preguntas Laboratorio 17</h1>
+    <h1 class="title is-1">Preguntas Laboratorio 18</h1>
     <h2 class="title is-2">
-        ¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+        ¿Qué otras formas de autentificación existen?
     </h2>
     <p class="is-size-5">
-        Escribir el código SQL exclusivamente en la capa del modelo ofrece varias ventajas cómo:
+        De las más populares, tenemos las siguientes formas:
         <ul class="is-size-5">
-            <li>Separación de responsabilidades.</li>
-            <li>Mantenibilidad.</li>
-            <li>Reutilización de código.</li>
-            <li>Facilidad de pruebas.</li>
-            <li>Escalabilidad.</li>
-        </ul>
-        Gracias a esto, se facilita la colaboración entre los desarrolladores y la realización de pruebas.
-    </p>
-    <h2 class="title is-2">
-        ¿Qué es SQL injection y cómo se puede prevenir?
-    </h2>
-    <p class="is-size-5">
-        ​La inyección SQL es una técnica de ataque en la que un atacante inserta código malicioso en una consulta SQL a 
-        través de entradas de usuario no validadas, con el objetivo de acceder, manipular o eliminar datos en una base de datos.
-    </p>
-    <p class="is-size-5">
-        Para prevenir estos ataques, se pueden implementar las siguientes soluciones:
-        <ul class="is-size-5">
-            <li>Validación y saneamiento de entradas.</li>
-            <li>Uso de consultas parametrizadas y declaraciones preparadas.</li>
-            <li>Implementación de procedimientos almacenados.</li>
+            <li>
+                <strong>Autenticación de dos factores (2FA):</strong> Este método añade una capa adicional de seguridad al 
+                requerir, además de la contraseña, una segunda forma de verificación, como un código enviado al 
+                teléfono del usuario o una aplicación de autenticación
+            </li>
+            <li>
+                <strong>Autenticación biométrica:</strong> Se basa en características físicas únicas del usuario, como 
+                huellas dactilares, reconocimiento facial o de iris.
+            </li>
+            <li>
+                <strong>Autenticación basada en tokens:</strong> Utiliza tokens de seguridad que se generan al iniciar sesión y se 
+                utilizan para validar al usuario en posteriores interacciones con el sistema.
+            </li>
+            <li>
+                <strong>Single Sign-On (SSO):</strong> Permite a los usuarios acceder a múltiples aplicaciones o sistemas con una sola autenticación. 
+                Una vez que el usuario inicia sesión en un sistema, puede acceder a otros relacionados sin necesidad de volver a autenticarse.
+            </li>
         </ul>
     </p>
     <p class="is-size-5">
-        Implementar estas medidas de seguridad es esencial para proteger las aplicaciones y bases de datos contra ataques de 
-        inyección de SQL, garantizando la integridad, confidencialidad y disponibilidad de la información.
+        La elección del método de autenticación adecuado depende de las necesidades específicas de la aplicación y del nivel de 
+        seguridad requerido. En muchos casos, combinar múltiples métodos, como la autenticación de dos factores junto con biometría, 
+        puede ofrecer una protección más robusta contra accesos no autorizados.
     </p>
 </div>
 <div class="footer">
     <h1 class="title is-1">Referencias</h1>
-    <p class="is-size-5">
-        Hernandez, R. D. (2021, Junio 28). El patrón modelo-vista-controlador: Arquitectura y frameworks explicados. freeCodeCamp.org. <a href="https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/">https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/</a>
-    </p>
-    <p>
-        Cómo prevenir un ataque de inyección SQL | Cloudflare. (n.d.). <a href="https://www.cloudflare.com/es-es/learning/security/threats/how-to-prevent-sql-injection/">https://www.cloudflare.com/es-es/learning/security/threats/how-to-prevent-sql-injection/</a>
-    </p>
+    <p class="is-size-5">C, D. (2025, Febrero 20). Autenticación en HTTP 👮: Métodos y Estrategias para Proteger tu Aplicación 💪🔒. Medium. <a href="https://medium.com/%40diego.coder/tipos-de-autenticaci%C3%B3n-en-http-d773dc63a392">https://medium.com/%40diego.coder/tipos-de-autenticaci%C3%B3n-en-http-d773dc63a392</a></p>
+    <p class="is-size-5">Vergara, S. (2023, Septiembre 26). Métodos de autenticación modernos: Autenticación web. Blog ITDO - Agencia De Desarrollo Web, APPs Y Marketing En Barcelona. <a href="https://www.itdo.com/blog/metodos-de-autenticacion-modernos-autenticacion-web/">https://www.itdo.com/blog/metodos-de-autenticacion-modernos-autenticacion-web/</a></p>
 </div>
 <%- include('includes/_footer.ejs')%>

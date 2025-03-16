@@ -23,11 +23,11 @@ exports.postSignup = (request, response, next) => {
     usuario
         .save()
         .then(() => {
-        request.session.info = 'Tu usuario se ha creado';
-        response.redirect('/users/login');
+            request.session.info = 'Tu usuario se ha creado';
+            response.redirect('/users/login');
         })
         .catch(error => {
-        console.log(error);
+            console.log(error);
         });
 };
 

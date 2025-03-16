@@ -12,13 +12,17 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: true }));
 
 const csrfProtection = csrf(); 
 app.use(csrfProtection);
 
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 

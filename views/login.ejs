@@ -1,31 +1,42 @@
 <%- include('includes/_header', { title: isNew ? 'Registro' : 'Login' }) %>
 <%- include('includes/_nav') %>
 
-<form 
-    action= "/users/<% if (isNew) { %>signup<% } else { %>login<% } %>"
-    method="POST">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-    <label for="username" class="label">Usuario</label>
-    <input
-        class="input is-info"
-        type="text"
-        placeholder="Pepito"
-        id="username"
-        name="username"
-        required
-    />
-    <br><br>
-    <label for="password" class="label">Contraseña</label>
-    <input
-        class="input is-info"
-        placeholder="Tu contraseña secreta 🤐"
-        type="password"
-        id="password"
-        name="password"
-        required
-    />
-    <br><br>
-    <input class="button is-info is-pulled-right" type="submit" value="Entrar">
-</form>
+<div class="container">
+    <h1 class="title"><%= isNew ? 'Registrarse' : 'Iniciar sesión' %></h1>
+    <% if (info) { %>
+        <div class="notification is-info"><%= info %></div>
+    <% } %>
+    <% if (warning) { %>
+        <div class="notification is-danger"><%= warning %></div>
+    <% } %>
+    <form action="/users/<%= isNew ? 'signup' : 'login' %>" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="field">
+            <label for="username" class="label">Usuario</label>
+            <div class="control">
+                <input class="input is-info" type="text" placeholder="Pepito" id="username" name="username" required>
+            </div>
+        </div>
+        <div class="field">
+            <label for="password" class="label">Contraseña</label>
+            <div class="control">
+                <input class="input is-info" type="password" placeholder="Tu contraseña secreta 🤐" id="password" name="password" required>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="button is-info is-pulled-right" type="submit" value="<%= isNew ? 'Registrarse' : 'Entrar' %>">
+            </div>
+        </div>
+    </form>
+    <br>
+    <p>
+        <% if (isNew) { %>
+            ¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión aquí</a>
+        <% } else { %>
+            ¿No tienes una cuenta? <a href="/users/signup">Regístrate aquí</a>
+        <% } %>
+    </p>
+</div>
 
 <%- include('includes/_footer.ejs') %>
