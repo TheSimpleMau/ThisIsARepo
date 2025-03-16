@@ -12,13 +12,13 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                <% if (sessionStatus.isLoggedIn) { %>
-                    <%= sessionStatus.username %> | 
+                <% if (isLoggedIn) { %>
+                    <%= username %> | 
                 <a href="/users/logout" class="button is-danger">
                     Salir
                 </a>
                 <% } else { %>
-                <a class="button is-primary">
+                <a href="/users/signup" class="button is-primary">
                     <strong>Registarse</strong>
                 </a>
                 <a href="/users/login" class="button is-light">

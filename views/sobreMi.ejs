@@ -8,6 +8,7 @@
     <p class="is-size-5">¡Déjame tu pregunta!</p>
     <div class="box">
         <form action="/sobreMi/guardar" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <div class="field">
                 <label class="label" for="pregunta">Escribe algo sobre mí:</label>
                 <div class="control">

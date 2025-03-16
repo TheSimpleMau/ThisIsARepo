@@ -25,6 +25,4 @@ class Blog {
 
 }
 
-Blog.posts = [];
-
 module.exports = Blog;

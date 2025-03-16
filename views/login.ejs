@@ -1,7 +1,10 @@
-<%- include('includes/_header', { title: 'Login' }) %>
+<%- include('includes/_header', { title: isNew ? 'Registro' : 'Login' }) %>
 <%- include('includes/_nav') %>
 
-<form action="/users/login" method="POST">
+<form 
+    action= "/users/<% if (isNew) { %>signup<% } else { %>login<% } %>"
+    method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <label for="username" class="label">Usuario</label>
     <input
         class="input is-info"

@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const appController = require('../controllers/app.controller');
+const isAuth = require('../utils/isAuth');
 
-router.get('/', appController.getRoot);
-router.get('/index', appController.getRoot);
+router.get('/', isAuth, appController.getRoot);
+router.get('/index', isAuth, appController.getRoot);
 
 
 router.use(appController.notFound);
