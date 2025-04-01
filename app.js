@@ -12,6 +12,14 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+
+app.use((request, response, next) => {
+    response.locals.isLoggedIn = request.session.isLoggedIn || false;
+    response.locals.username = request.session.username || '';
+    next();
+});
+
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.urlencoded({ extended: true }));
 
