@@ -7,3 +7,5 @@ A partir del labotario 11 en adelante, cuando finalice por completo un laborator
 También, hay algunos laboratorios en los que los he relizado dentro del proyecto. A continuación, se enlistan los laboratorios que se han hecho junto con su referencia al commit:
 
 Lab24: AJAX. Commit: bd2ab99. Link: https://github.com/EdCanCe/WorkCells/commit/bd2ab992d0dba1281ddab09ecb08777f22173f86
+Lab25: Transacciones. Commit: 501a4a1. Link: https://github.com/YaelChar417/lab1/commit/501a4a127b7b21cbd38eea00f559c6b68eff79e4
+
