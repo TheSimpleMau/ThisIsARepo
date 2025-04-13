@@ -2,7 +2,6 @@
 <%- include('includes/_nav') %>
 
 <section class="section">
-    
     <% if (error) { %>
         <h1 class="title is-1">Pregunta no guardada :(</h1>
         <% if (reason == 400) { %>
@@ -13,13 +12,23 @@
         <a class="button" href="/">Regresar al inicio</a>
     <% } else { %>
         <h1 class="title is-1">Pregunta guardada correctamente!</h1>
-        <div>
-            <h2 class="subtitle">Preguntas recibidas:</h2>
-            <ul>
-                <% for (let pregunta of preguntas) { %>
-                    <li><%= pregunta %></li>
-                <% } %>
-            </ul>
+        <% if (file) { %>
+        <div class="box">
+            <h2 class="subtitle">Foto subida:</h2>
+            <figure class="image is-128x128">
+            <img src="/uploads/<%= file.filename %>" alt="Foto subida">
+            </figure>
+        </div>
+        <% } else { %>
+            <p class="is-size-5">No se subió ninguna foto.</p>
+        <% } %>
+        <div class="box">
+        <h2 class="subtitle">Preguntas recibidas:</h2>
+        <ul>
+            <% for (let pregunta of preguntas) { %>
+            <li><%= pregunta %></li>
+            <% } %>
+        </ul>
         </div>
         <br>
         <a class="button" href="/">Regresar al inicio</a>

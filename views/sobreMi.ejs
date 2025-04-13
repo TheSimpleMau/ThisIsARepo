@@ -7,7 +7,7 @@
     <h1 class="title is-1">¿Quieres saber algo de mi?</h1>
     <p class="is-size-5">¡Déjame tu pregunta!</p>
     <div class="box">
-        <form action="/sobreMi/guardar" method="POST">
+        <form action="/sobreMi/guardar" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <div class="field">
                 <label class="label" for="pregunta">Escribe algo sobre mí:</label>
@@ -16,8 +16,20 @@
                 </div>
             </div>
             <div class="field">
+                <label class="label">¿Quieres que te conozca? Envíame una foto tuya :D</label>
+                <div class="file has-name is-boxed">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="archivo" />
+                    <span class="file-cta">
+                    <span class="file-label">Seleccionar archivo…</span>
+                    </span>
+                    <span class="file-name">Sin archivo seleccionado</span>
+                </label>
+                </div>
+            </div>
+            <div class="field">
                 <div class="control">
-                    <button class="button is-primary" type="submit">Enviar</button>
+                <button class="button is-primary" type="submit">Enviar</button>
                 </div>
             </div>
         </form>
@@ -25,3 +37,16 @@
 </section>
 
 <%- include('includes/_footer.ejs') %>
+
+<!-- Script para que se muestre el nombre del archivo seleccionado -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.querySelector('.file-input');
+        fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+            const fileNameElement = document.querySelector('.file-name');
+            fileNameElement.textContent = fileInput.files[0].name;
+        }
+        });
+    });
+</script>

@@ -1,21 +1,15 @@
 const Pregunta = require('../models/sobreMi.model');
 
 exports.postGuardar = (request, response, next) => {
-    sessionStatus = {
-        isLoggedIn : request.session.isLoggedIn || false,
-        username : request.session.username || '',
-    }
     const preguntaTexto = request.body.pregunta;
     if (!preguntaTexto) {
         return response.status(400).render('preguntaResultado', {
-            error: true,
-            reason: 400
+        error: true,
+        reason: 400
         });
     }
-    // Creamos una nueva instancia del modelo Pregunta
+    const archivoSubido = request.file;
     const nuevaPregunta = new Pregunta(preguntaTexto);
-    
-    // Guardamos la pregunta
     nuevaPregunta.save((err) => {
         if (err) {
             return response.status(500).render('preguntaResultado', {
@@ -36,6 +30,7 @@ exports.postGuardar = (request, response, next) => {
             response.render('preguntaResultado', {
                 error: false,
                 preguntas: preguntas,
+                file: archivoSubido,
                 isLoggedIn : request.session.isLoggedIn || false,
                 username : request.session.username || '',
             });
